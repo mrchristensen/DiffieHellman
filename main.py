@@ -17,7 +17,6 @@ def mod_exp(x, y, N):
         return (x * (z ** 2)) % N
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print(f'Hard coded values:\np = {p}\na = {a}\ng = {g}\ng^b % p = {g_b_mod_p}\n')
 
