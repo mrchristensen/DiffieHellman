@@ -2,15 +2,19 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+p = 12181492810988664495017491178372233835381077107491386374099654651874882048862073437146220579332510437000029696005029005194843775013033539704552333899762179  # openssl prime -safe -generate -bits 512
+a = 20891563773462123896204418683194062596038182229362433041917251470169172667990238136369636970581723525230222565705995177166942411535234742247842882232671835  # from /dev/urandom
+g = 5  # from spec:2wq:wq
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
+g_b_mod_p = 308376848323412814814558943669072961568094875716095931067726756237444030568778979140516908036567120199097108245018498898501794560464940987551899675128711
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    # print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    g_a_mod_p = pow(g, a, p)
+    print(g_a_mod_p)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    g_ab_mod_p = pow(g_b_mod_p, a, p)
+
+    print(g_ab_mod_p)
+    print(g_ab_mod_p == 1251471439546230126277171520402169094304861686480199629304921740126112250060000619985676840081082263525023169765569226496998612580083679920212517971079432)
